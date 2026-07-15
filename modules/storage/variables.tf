@@ -151,3 +151,10 @@ variable "confident_redis_private_endpoint_subnet_id" {
   type        = string
   default     = ""
 }
+
+variable "confident_psql_password" {
+  description = "PostgreSQL password. Empty generates a random one."
+  type        = string
+  default     = ""
+  sensitive   = true
+}

@@ -68,6 +68,7 @@ module "storage" {
   confident_psql_storage_mb            = var.confident_psql_storage_mb
   confident_psql_db_name               = var.confident_psql_db_name
   confident_psql_username              = var.confident_psql_username
+  confident_psql_password              = var.confident_psql_password
   confident_psql_backup_retention_days = var.confident_psql_backup_retention_days
   confident_psql_high_availability     = var.confident_psql_high_availability
 

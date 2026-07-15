@@ -123,6 +123,13 @@ variable "confident_psql_username" {
   default = "confident"
 }
 
+variable "confident_psql_password" {
+  description = "PostgreSQL password. Leave empty to auto-generate a random one."
+  type        = string
+  default     = ""
+  sensitive   = true
+}
+
 variable "confident_psql_backup_retention_days" {
   type    = number
   default = 7

@@ -21,7 +21,12 @@ locals {
   )
 }
 
+locals {
+  postgres_password = coalesce(var.confident_psql_password, one(random_password.postgres[*].result))
+}
+
 resource "random_password" "postgres" {
+  count   = var.confident_psql_password == "" ? 1 : 0
   length  = 24
   special = false
 }
@@ -50,7 +55,7 @@ resource "azurerm_postgresql_flexible_server" "this" {
   location                      = var.confident_azure_region
   version                       = var.confident_psql_version
   administrator_login           = var.confident_psql_username
-  administrator_password        = random_password.postgres.result
+  administrator_password        = local.postgres_password
   delegated_subnet_id           = var.confident_database_subnet_id
   private_dns_zone_id           = azurerm_private_dns_zone.postgres.id
   public_network_access_enabled = false

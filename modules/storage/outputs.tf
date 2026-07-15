@@ -1,6 +1,6 @@
 output "database_url" {
   description = "PostgreSQL connection string (Helm secrets.data.DATABASE_URL)."
-  value       = "postgresql://${var.confident_psql_username}:${urlencode(random_password.postgres.result)}@${azurerm_postgresql_flexible_server.this.fqdn}:5432/${var.confident_psql_db_name}"
+  value       = "postgresql://${var.confident_psql_username}:${urlencode(local.postgres_password)}@${azurerm_postgresql_flexible_server.this.fqdn}:5432/${var.confident_psql_db_name}"
   sensitive   = true
 }
 

@@ -34,3 +34,10 @@ terraform.rc
 
 # Misc
 DEPLOY.md
+
+# Terraform state backend config (kept out of the published module)
+backend.tf
+
+# Helm values
+values.yaml
+values.*.yaml
