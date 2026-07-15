@@ -6,7 +6,7 @@ Terraform module that stands up the cloud infrastructure for a self-hosted [Conf
 
 ## Architecture
 
-![Confident AI on Azure](./public/architecture.png)
+![Confident AI on Azure](https://raw.githubusercontent.com/confident-ai/terraform-azurerm-confident-ai/main/public/architecture.png)
 
 Into a resource group and VNet you already have, this module provisions:
 
